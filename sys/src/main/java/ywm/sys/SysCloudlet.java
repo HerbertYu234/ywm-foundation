@@ -2,7 +2,6 @@ package ywm.sys;
 
 import com.wolf.Wolf;
 import com.wolf.cloud.WolfCloudlet;
-import io.swagger.annotations.Api;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 @Wolf.BootApplication(name = "sys")
 @EnableFeignClients
 @RestController
-@Api(tags = "SysCloudlet API")
 public class SysCloudlet implements WolfCloudlet {
 
     public static void main(String[] args) {
