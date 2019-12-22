@@ -1,5 +1,6 @@
 package ywm.sys.api;
 
+import com.wolf.lang.helper.Strings;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,16 @@ public class SysNoticeServiceApi {
     @ApiOperation("保存")
     @PostMapping("/save")
     public SysNotice save(@RequestBody SysNotice sysNotice) {
-        return sysNoticeService.save(sysNotice);
+        if(Strings.isNotBlank(sysNotice.getId())){
+            SysNotice db = sysNoticeService.findById(sysNotice.getId());
+            db.setTitle(sysNotice.getTitle());
+            db.setContent(sysNotice.getContent());
+            db.setStatus(sysNotice.getStatus());
+            db.setPlayable(sysNotice.getPlayable());
+            sysNotice = db;
+        }
+        SysNotice save = sysNoticeService.save(sysNotice);
+        return save;
     }
 
     @ApiOperation("删除")
