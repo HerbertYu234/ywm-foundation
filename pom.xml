@@ -33,10 +33,17 @@
             <groupId>com.yhb.wolf</groupId>
             <artifactId>cloudlet</artifactId>
         </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>com.yhb.wolf</groupId>-->
+            <!--<artifactId>kubernetes</artifactId>-->
+        <!--</dependency>-->
+
         <dependency>
             <groupId>com.yhb.wolf</groupId>
             <artifactId>wolf-doc</artifactId>
         </dependency>
+
     </dependencies>
 
 
