@@ -21,6 +21,7 @@
         <module>blog</module>
         <module>sys</module>
         <module>lib</module>
+        <module>gateway</module>
     </modules>
 
     <dependencies>
@@ -64,6 +65,12 @@
             <dependency>
                 <groupId>yww-foundation</groupId>
                 <artifactId>blog</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>yww-foundation</groupId>
+                <artifactId>gateway</artifactId>
                 <version>1.0.0</version>
             </dependency>
         </dependencies>
