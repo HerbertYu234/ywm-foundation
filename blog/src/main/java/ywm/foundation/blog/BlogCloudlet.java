@@ -2,7 +2,6 @@ package ywm.foundation.blog;
 
 
 import com.wolf.Wolf;
-import com.wolf.cloud.WolfCloudlet;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +11,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 import ywm.foundation.blog.model.*;
 import ywm.foundation.blog.service.*;
-import ywm.foundation.blog.term.ArticleTerm;
 import ywm.foundation.blog.term.ArticleCommentTerm;
+import ywm.foundation.blog.term.ArticleTerm;
 import ywm.foundation.blog.view.VArticle;
 import ywm.foundation.blog.view.VComment;
+import ywm.library.shared.security.SecurityCloudlet;
 
 /**
  * Created by Herbert Yu on 2019-08-14 17:41
@@ -24,7 +24,7 @@ import ywm.foundation.blog.view.VComment;
 @EnableFeignClients
 @RestController
 @Api(tags = "BlogCloudlet API")
-public class BlogCloudlet implements WolfCloudlet {
+public class BlogCloudlet extends SecurityCloudlet {
 
     public static void main(String[] args) {
         Wolf.run(BlogCloudlet.class, args);
